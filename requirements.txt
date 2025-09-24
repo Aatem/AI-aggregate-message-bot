@@ -1,1 +1,2 @@
 python-telegram-bot[webhooks]==22.4
+google-generativeai==0.8.5
