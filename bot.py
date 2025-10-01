@@ -33,7 +33,7 @@ async def send_merged_text(user_id, context: ContextTypes.DEFAULT_TYPE):
     merged_text = "\n---\n".join(notes)
 
     try:
-        model = gemini.GenerativeModel("gemini-1.5-flash")
+        model = gemini.GenerativeModel("gemini-2.5-flash")
         response = model.generate_content(f"{SYSTEM_PROMPT}\n\nВот текст заметок:\n{merged_text}")
         tasks_text = response.text.strip() if response.text else "Задачи не найдены."
     except Exception as e:
@@ -78,8 +78,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
-    TOKEN = "8275396205:AAEMwgFx3jO1Wi3xFEb8Qa-abQUH59DmZfM"        # вставь свой токен Telegram
-    GEMINI_API_KEY = "AIzaSyBUp0lsVlCSxs17PdD35IP95MCsnqdLPW0"  # вставь свой ключ Gemini
+    TOKEN = "TG_TOKEN"        # вставь свой токен Telegram
+    GEMINI_API_KEY = "AI_TOKEN"  # вставь свой ключ Gemini
     PORT = int(os.environ.get("PORT", 8443))  # Render предоставляет порт через переменную окружения
     APP_NAME = os.environ.get("RENDER_SERVICE_NAME")  # Имя сервиса на Render
     
