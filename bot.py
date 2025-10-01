@@ -78,8 +78,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
-    TOKEN = "TG_TOKEN"        # вставь свой токен Telegram
-    GEMINI_API_KEY = "AI_TOKEN"  # вставь свой ключ Gemini
+    TOKEN = os.environ.get("TG_TOKEN")        # вставь свой токен Telegram
+    GEMINI_API_KEY = os.environ.get("AI_TOKEN")  # вставь свой ключ Gemini
     PORT = int(os.environ.get("PORT", 8443))  # Render предоставляет порт через переменную окружения
     APP_NAME = os.environ.get("RENDER_SERVICE_NAME")  # Имя сервиса на Render
     
